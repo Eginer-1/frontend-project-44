@@ -1,0 +1,23 @@
+{
+  "name": "hexlet_project",
+  "version": "1.0.0",
+  "description": "step1",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jesus-sas/frontend-project-44.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jesus-sas/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/Jesus-sas/frontend-project-44#readme"
+}
