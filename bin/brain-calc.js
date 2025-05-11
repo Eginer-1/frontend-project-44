@@ -5,6 +5,12 @@ let name = askName();
 let numWin = 0;
 
 function startGame() {
+  if (numWin === 3) {
+    console.log(`Congratulations, ${name}!`);
+
+    return;
+  }
+
   let numOne = Math.floor(Math.random() * 100);
   let numSec = Math.floor(Math.random() * 100);
   let result = numOne + numSec;
@@ -17,26 +23,14 @@ function startGame() {
   if (result === Number(response)) {
     console.log("Correct!");
     numWin++;
-    console.log(numWin);
 
-    if (numWin === 3) {
-      console.log(`Congratulations, ${name}!`);
-
-      return;
-    } else {
-      startGame();
-    }
+    startGame();
   } else {
     console.log(
       `'${response}' is wrong answer ;(. Correct answer was '${result}'.`
     );
     console.log(`Let's try again, ${name}`);
     startGame();
-  }
-  if (numWin === 3) {
-    console.log(`Congratulations, ${name}!`);
-
-    return;
   }
 }
 startGame();
