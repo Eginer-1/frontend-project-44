@@ -2,7 +2,6 @@ import readlineSync from "readline-sync";
 import askName from "../utils/welcome.js";
 
 let name = askName();
-
 let numWin = 0;
 
 function startGame() {
@@ -15,7 +14,6 @@ function startGame() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   console.log(`Question: ${random}`);
   let response = readlineSync.question("Your answer:");
-
   if (response === "yes") {
     if (random % 2 === 0) {
       console.log("Correct!");
