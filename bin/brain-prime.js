@@ -1,8 +1,7 @@
 import readlineSync from "readline-sync";
+import askName from "../utils/welcome.js";
 
-const name = readlineSync.question("May I have your name? ");
-console.log("Hello " + name);
-console.log("Welcome to the Brain Games!");
+let name = askName();
 let numWin = 0;
 
 const isPrime = (num) => {
