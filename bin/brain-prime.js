@@ -13,23 +13,27 @@ const isPrime = (num) => {
 };
 
 const startGame = () => {
+  if (numWin === 3) {
+    console.log(`Congratulations, ${name}!`);
+
+    return;
+  }
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-  for (let i = 0; i < 3; i++) {
-    const number = Math.floor(Math.random() * 100) + 1;
-    console.log(`Question: ${number}`);
-    const answer = readlineSync.question("Your answer: ");
+  const number = Math.floor(Math.random() * 100) + 1;
+  console.log(`Question: ${number}`);
+  const answer = readlineSync.question("Your answer: ");
 
-    const correctAnswer = isPrime(number) ? "yes" : "no";
-    if (answer === correctAnswer) {
-      console.log("Correct!");
-    } else {
-      console.log(`Wrong! The correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      startGame();
-    }
+  const correctAnswer = isPrime(number) ? "yes" : "no";
+  if (answer === correctAnswer) {
+    console.log("Correct!");
+    numWin++;
+    startGame();
+  } else {
+    console.log(`Wrong! The correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${name}!`);
+    startGame();
   }
-  console.log(`Congratulations, ${name}!`);
 };
 
 startGame();
